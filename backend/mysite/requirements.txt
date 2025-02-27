@@ -1,0 +1,31 @@
+asgiref==3.8.1
+Django==5.1.6
+django-cors-headers==4.7.0
+djangorestframework==3.15.2
+sqlparse==0.5.3
+tzdata==2025.1
+django-rest-authtoken
+djangorestframework-simplejwt
+drf-yasg
+django-rest-swagger
+
+# extras
+gunicorn>=21.2
+psycopg2-binary>=2.9  # For PostgreSQL
+django-cors-headers>=4.2  # If handling CORS for Svelte
+whitenoise>=6.5  # For serving static files in production
+
+#Db
+pymysql == 1.1.1
+cffi == 1.17.1 
+cryptography == 44.0.1 
+pycparser == 2.22
+
+
+# Optional
+# django-debug-toolbar  # Debugging
+# drf-yasg  # API documentation (Swagger)
+# django-environ  # Managing environment variables
+# django-extensions  # Extra management commands
+# mysqlclient==2.1.0
+
