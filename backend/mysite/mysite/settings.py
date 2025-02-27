@@ -92,7 +92,7 @@ DATABASES = {
         'NAME': 'pollsDB',          # The name of your MySQL database
         'USER': 'ocansey',          # The MySQL user you created
         'PASSWORD': 'password01',  # The password for the MySQL user
-        'HOST': '',             # Or your MySQL server IP (use 'localhost' if it's on the same machine)
+        'HOST': 'db',             # Or your MySQL server IP (use 'localhost' if it's on the same machine)
         'PORT': '3306',                  # Default MySQL port
     }
 }

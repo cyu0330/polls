@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Copy the requirements.txt file to the container
-COPY backend/requirements.txt /app/
+COPY backend/mysite/requirements.txt /app/
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r /app/requirements.txt
