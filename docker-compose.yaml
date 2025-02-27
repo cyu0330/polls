@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # Backend (Django)
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    volumes:
+      - ./backend/mysite:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - MYSQL_HOST=db
+    depends_on:
+      - db
+
+  # Frontend (React)
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    volumes:
+      - ./frontend/my-app:/app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  # MySQL Database
+db:
+  image: mysql:8
+  environment:
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    MYSQL_DATABASE: ${MYSQL_DATABASE}
+    MYSQL_USER: ${MYSQL_USER}
+    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  volumes:
+    - db_data:/var/lib/mysql
+  ports:
+    - "3306:3306"
+
+
+# Volumes for persistent data
+volumes:
+  db_data:
